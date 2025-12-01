@@ -5,8 +5,9 @@
 
   <h3 align="center">Dropzone Challenge</h3>
 
-  <p align="center">
-    The Eraneos data case for the Data Engineering position
+<p align="left">
+<b>Dear Candidate</b>,<br/><br/>
+Thank you for taking the time to demonstrate your technical skills solving our Dropzone challenge. It is inspired by a former customer project and should simulate the expectations on n **Cloud- and Data Engineer** at Eraneos Analytics. We kindly as you to implement certain functionalities on either AWS or GCP.
   </p>
 </div>
 
@@ -35,4 +36,13 @@ You don't need to implement them, but feel free to do so if time permits.
 
 ---
 ### Expectation
-Please upload your solution to this Gitlab Repo. Feel free to mock up the API schema and any other specifications or metadata.
+Please upload your solution (source code, scripts, resources,...) as well as your presentation into this Gitlab Repo at latest 24 hours before our interview meeting.
+
+---
+### Evaluation Criteria
+The time allocation for this case is approximately eight hours. The assessment does not demand a perfect implementation; rather, the focus is on delivering a functional solution. Key evaluation points include:
+
+* Structured and understandable presentation of your approach and system architecture
+* Deployed implementation of the end-to-end dropzone service
+* Your understanding of strengths and weaknesses of your solution
+* Thoughtful use of modern and clean development practices
