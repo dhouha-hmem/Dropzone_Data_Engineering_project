@@ -29,7 +29,10 @@ Eraneos is an international strategy, transformation and technology consulting g
 ---
 ### Challenge
 
-Your task is to design the architecture for  a service where clients will be able to send their data via POST requests.
+Your task is to design the architecture for a service where clients will be able to send their data via POST requests. Please take a detailed look into the presentation in this repo:
+
+&rarr; [Eraneos_Analytics_DE_dropzone_challenge.pptx](https://gitlab.com/eraneos/de_ea/internal/recruiting/recruiting-case-data-engineering-dropzone-challenge/-/blob/f6415dd1992a1dfee5fb359b6b297c81a32617d5/Eraneos_Analytics_DE_dropzone_challenge.pptx)
+
 We want to see careful considerations of design. Examples include but are not limited to: scalability, security, automation, and data lineage/governance.
 Think about these items and how you would approach implementing them. They should be included in your presentation
 You don't need to implement them, but feel free to do so if time permits.
