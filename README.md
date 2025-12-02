@@ -7,7 +7,7 @@
 
 <p align="left">
 <b>Dear Candidate</b>,<br/><br/>
-Thank you for taking the time to demonstrate your technical skills solving our Dropzone challenge. It is inspired by a former customer project and should simulate the expectations on n **Cloud- and Data Engineer** at Eraneos Analytics. We kindly as you to implement certain functionalities on either AWS or GCP.
+Thank you for taking the time to demonstrate your technical skills solving our Dropzone challenge. It is inspired by a former customer project and should simulate the expectations towards <b>Cloud- and Data Engineers</b> at Eraneos Analytics. We kindly as you to implement certain functionalities on either AWS or GCP.
   </p>
 </div>
 
