@@ -10,19 +10,11 @@
 
 Dear candidate,
 
-Thank you for taking the time to demonstrate your technical skills solving our Dropzone challenge. It is inspired by a former customer project and intended to simulate various expectations towards <b>Cloud- and Data Engineers</b> at Eraneos Analytics. 
-
-> **Recruiting Process**
-> 
-> - You will have received access to a sandbox in Google Cloud Platform or AWS as per your preference.
-> - [Implement this challenge](#dropzone-challenge) on the provided cloud sandbox.
-> - Prepare a presentation (~15 min) of your implementation
-> - Please upload your solution (source code, scripts, resources,...) as well as your presentation into this Gitlab Repo **at the latest 24 hours before** the scheduled interview meeting.
-> - We meet virtually for the [technical interview](#interview-agenda) (~2h) at the scheduled time
-> - You will have a final meeting with our CEO likely on the next day after internal alignments have been completed.
+Thank you for taking the time to demonstrate your technical skills solving our Dropzone challenge. It is inspired by a former customer project and intended to simulate various expectations towards <b>Cloud- and Data Engineers</b> at Eraneos Analytics.
 
 **Table of Contents**
 
+- [Recruiting Process](#recruiting-process)
 - [Interview Agenda](#interview-agenda)
 - [Dropzone Challenge](#dropzone-challenge)
   - [Objectives](#objectives)
@@ -39,6 +31,17 @@ Thank you for taking the time to demonstrate your technical skills solving our D
     - [Testing](#testing)
     - [CI/CD](#cicd)
 
+---
+# Recruiting Process
+
+- You should have received access to a sandbox in Google Cloud Platform or AWS as per your preference. If this is not the case or believe you are missing permissions, please contact us.
+- [Implement this challenge](#dropzone-challenge) on the provided cloud sandbox.
+- Prepare a presentation (~15 min) of your implementation.
+- Please upload your solution (source code, scripts, resources,...) as well as your presentation into this Gitlab Repo **at the latest 24 hours before** the scheduled interview meeting.
+- We meet virtually for the [technical interview](#interview-agenda) (~2h) at the scheduled time.
+- You will have a final meeting with our CEO likely on the next day after internal alignments have been completed.
+
+---
 # Interview Agenda
 
 Our interview will take about 2 hours. You will be talking about your solution with two of our senior data engineers from Eraneos. 
@@ -51,7 +54,7 @@ The agenda will roughly follow these items:
 - Data Case Presentation + Discussion (15-20 min) 
 - Data Case Code Walkthrough + Discussion (45 min) 
 - Q&A - ask us anything (30 min) 
-- Feedback (5 min)   
+- Feedback (5 min)
 
 ---
 # Dropzone Challenge
@@ -60,7 +63,7 @@ The time allocation for this case should be approximately between eight to twelv
 
 ## Objectives
 
-Your **first objective is to design and present a system architecture**. The system provides a REST API service to ingest JSON data, process that data, and make the processed data available for further analysis. 
+Your **first objective is to design and present a system architecture**. The system should provide a REST API service to ingest JSON data, process that data, and make the processed data available for further analysis.
 
 The presentation of your architecture shall consider all [mandatory system tasks](#mandatory-system-tasks). In addition, elaborate your ideas and strategies on as many [optional features](#optional-features) as possible.
 
@@ -71,25 +74,23 @@ Feel free to use GenAI coding assistants to create and improve your architecture
 Here are some some things will impress us during the interview later:
 
 * A well structured and understandable presentation of your approach and system architecture
-* A demonstrable working deployment of your implementation of the end-to-end dropzone service
-* Beautiful code design
-* You have a good understanding of the strengths and weaknesses of your solution
+* A demonstrable, working deployment of your solution to the dropzone challenge
+* A good understanding of the strengths and weaknesses of your solution
 * Thoughtful use of modern and clean development practices
 
 ## Mandatory System Tasks
 
 ### 01 | Data ingestion
 
-A JSON file's contents is a timestamped array of measuring points. Check out the sample file:
-- [json_payload/file.json](../json_payload/file.json)
+The ingested data takes the form of a JSON file containing a timestamped array of measuring points.  See [payload.json](payload.json) for an example dataset.
 
 The JSON data will be submitted as a POST request with a command equivalent to:
 
 ```shell
-curl -X POST -d @file.json http://service.com/endpoint
+curl -X POST -d @payload.json http://service.com/endpoint
 ```
 
-> Note: Assume that there may be up to 1000 requests per minute under maximum load.
+Assume that there may be up to 1000 requests per minute under maximum load.
 
 ### 02 | Storing raw data
 
@@ -121,7 +122,7 @@ Build the API to come complete with standardized documentation. Consider using O
 
 ### Scalability
 
-Select technologies and/or services that scale well horizontally. Design software components also in a scalable way. For example, you may consider decoupling ingestion from transformation.
+Select technologies and/or services that scale well horizontally. Design software components in a scalable way. For example, you may consider decoupling ingestion from transformation.
 
 ### Security
 
@@ -129,11 +130,11 @@ APIs exposed to the internet should be secured enforcing authentication. Think a
 
 ### Lineage
 
-Think about how you could track data lineage from ingestion to analysis, so you could confirm transformed data in retrospect.
+Think about how you could track data lineage from ingestion to analysis, so you can investigate data quality issues at the source.
 
 ### Testing
 
-Well tested code is usually more stable, secure, and easier to maintain. Implement tests using a testing framework of your choice. Elaborate on the concept of test coverage.
+Well tested code is usually more stable, secure, and easier to maintain. Implement tests using a testing framework of your choice. Elaborate on the concept of test coverage or other metrics to validate the efficacy of your test suite.
 
 ### CI/CD
 
