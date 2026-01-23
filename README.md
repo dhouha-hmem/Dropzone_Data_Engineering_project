@@ -24,12 +24,6 @@ Thank you for taking the time to demonstrate your technical skills solving our D
     - [03 | Data transformation](#03--data-transformation)
     - [04 | Storing transformed data](#04--storing-transformed-data)
   - [Optional Features](#optional-features)
-    - [API design](#api-design)
-    - [Scalability](#scalability)
-    - [Security](#security)
-    - [Lineage](#lineage)
-    - [Testing](#testing)
-    - [CI/CD](#cicd)
 
 ---
 # Recruiting Process
@@ -65,13 +59,16 @@ The time allocation for this case should be approximately between eight to twelv
 
 Your **first objective is to design and present a system architecture**. The system should provide a REST API service to ingest JSON data, process that data, and make the processed data available for further analysis.
 
-The presentation of your architecture shall consider all [mandatory system tasks](#mandatory-system-tasks). In addition, elaborate your ideas and strategies on as many [optional features](#optional-features) as possible.
+The presentation of your architecture shall consider all [mandatory system tasks](#mandatory-system-tasks). In addition, elaborate your ideas and strategies on as many [optional features](#optional-features) as possible. 
 
-The **second objective is to implement as much of your architecture** on your chosen cloud sandbox as your time permits. Prefer Python to implement the services where possible.
+The **second objective is to implement your architecture** completely or partially on the provided cloud sandbox environment as your time permits. 
+Prefer Python to implement the services where possible. If you want, you can also implement one or more optional features, which would be really awesome.
 
-Feel free to use GenAI coding assistants to create and improve your architecture and jobs. We are looking forward to an open discussion what you used, and how it improved your efficiency.
+> If you are applying as a **junior data engineer**, you may implement your solution on your local system. You do not need to configure and deploy cloud resources. You may also skip the optional features, except the [Testing](#testing) feature which you must include with your code.
 
-Here are some some things will impress us during the interview later:
+Feel free to use GenAI coding assistants to create and improve your architecture and jobs. We are looking forward to an open discussion what tooling you used, and how it improved your efficiency.
+
+Here are some some things that will impress us during the interview:
 
 * A well structured and understandable presentation of your approach and system architecture
 * A demonstrable, working deployment of your solution to the dropzone challenge
@@ -90,7 +87,7 @@ The JSON data will be submitted as a POST request with a command equivalent to:
 curl -X POST -d @payload.json http://service.com/endpoint
 ```
 
-Assume that there may be up to 1000 requests per minute under maximum load.
+Assume that there may be up to 10 requests per second under maximum load.
 
 ### 02 | Storing raw data
 
@@ -116,26 +113,6 @@ The UTC timestamp is a primary key. If the same UTC timestamp is received twice,
 
 The following features are considered optional for the dropzone challenge. However, in a real life scenario these features are anything but optional. Please try to elaborate on them during your presentation if only in theory. Implementation of some or even all features is considered a big bonus.
 
-### API design
-
-Build the API to come complete with standardized documentation. Consider using OpenAPI.
-
-### Scalability
-
-Select technologies and/or services that scale well horizontally. Design software components in a scalable way. For example, you may consider decoupling ingestion from transformation.
-
-### Security
-
-APIs exposed to the internet should be secured enforcing authentication. Think about common ways to authenticate and secure communication.
-
-### Lineage
-
-Think about how you could track data lineage from ingestion to analysis, so you can investigate data quality issues at the source.
-
-### Testing
-
-Well tested code is usually more stable, secure, and easier to maintain. Implement tests using a testing framework of your choice. Elaborate on the concept of test coverage or other metrics to validate the efficacy of your test suite.
-
-### CI/CD
-
-Automated deployment makes day to day operations much easier and more reproducible. Implement common CI/CD tasks to deploy your system artefacts to the cloud.
+| API design | Scalability | Security | Lineage | Testing | CI/CD |
+|---|---|---|---|---|---|
+| Build the API to come complete with standardized documentation. Consider using OpenAPI. | Select technologies and/or services that scale well horizontally. Design software components in a scalable way. For example, you may consider decoupling ingestion from transformation. | APIs exposed to the internet should be secured enforcing authentication. Think about common ways to authenticate and secure communication. | Think about how you could track data lineage from ingestion to analysis, so you can investigate data quality issues at the source. | Well tested code is usually more stable, secure, and easier to maintain. Implement tests using a testing framework of your choice. Elaborate on the concept of test coverage or other metrics to validate the efficacy of your test suite. | Automated deployment makes day to day operations much easier and more reproducible. Implement common CI/CD tasks to deploy your system artefacts to the cloud. |
