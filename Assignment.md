@@ -1,0 +1,118 @@
+<a id="readme-top"></a>
+<br />
+<div align="center">
+    <img src="https://www.eraneos.com/wp-content/themes/expedition-theme/images/eraneos-logo-black.svg" alt="eraneos-logo" width="300">
+
+  <h3 align="center">Dropzone Challenge</h3>
+
+</div>
+
+
+Dear candidate,
+
+Thank you for taking the time to demonstrate your technical skills solving our Dropzone challenge. It is inspired by a former customer project and intended to simulate various expectations towards <b>Cloud- and Data Engineers</b> at Eraneos Analytics.
+
+**Table of Contents**
+
+- [Recruiting Process](#recruiting-process)
+- [Interview Agenda](#interview-agenda)
+- [Dropzone Challenge](#dropzone-challenge)
+  - [Objectives](#objectives)
+  - [Mandatory System Tasks](#mandatory-system-tasks)
+    - [01 | Data ingestion](#01--data-ingestion)
+    - [02 | Storing raw data](#02--storing-raw-data)
+    - [03 | Data transformation](#03--data-transformation)
+    - [04 | Storing transformed data](#04--storing-transformed-data)
+  - [Optional Features](#optional-features)
+
+---
+# Recruiting Process
+
+- You should have received access to a sandbox in Google Cloud Platform or AWS as per your preference. If this is not the case or believe you are missing permissions, please contact us.
+- [Implement this challenge](#dropzone-challenge) on the provided cloud sandbox.
+- Prepare a presentation (~15 min) of your implementation.
+- Please upload your solution (source code, scripts, resources,...) as well as your presentation into this Gitlab Repo **at the latest 24 hours before** the scheduled interview meeting.
+- We meet virtually for the [technical interview](#interview-agenda) (~2h) at the scheduled time.
+- You will have a final meeting with our CEO likely on the next day after internal alignments have been completed.
+
+---
+# Interview Agenda
+
+Our interview will take about 2 hours. You will be talking about your solution with two of our senior data engineers from Eraneos. 
+
+We love our interviews to be more like a nerdy tech talk than a test examination. We are much more interested in finding out who you are as techie, and what you are capable of, than finding what you can't do (yet).
+
+The agenda will roughly follow these items:
+
+- Getting to know each other (10-15 min) 
+- Data Case Presentation + Discussion (15-20 min) 
+- Data Case Code Walkthrough + Discussion (45 min) 
+- Q&A - ask us anything (30 min) 
+- Feedback (5 min)
+
+---
+# Dropzone Challenge
+
+The time allocation for this case should be approximately between eight to twelve hours. The challenge does not demand a perfect implementation; rather, the focus should be on showcasing the depth of your understanding of common engineering issues, and your ability to deliver a functional solution under time constraint. 
+
+## Objectives
+
+Your **first objective is to design and present a system architecture**. The system should provide a REST API service to ingest JSON data, process that data, and make the processed data available for further analysis.
+
+The presentation of your architecture shall consider all [mandatory system tasks](#mandatory-system-tasks). In addition, elaborate your ideas and strategies on as many [optional features](#optional-features) as possible. 
+
+The **second objective is to implement your architecture** completely or partially on the provided cloud sandbox environment as your time permits. 
+Prefer Python to implement the services where possible. If you want, you can also implement one or more optional features, which would be really awesome.
+
+> If you are applying as a **junior data engineer**, you may implement your solution on your local system. You do not need to configure and deploy cloud resources. You may also skip the optional features, except the [Testing](#testing) feature which you must include with your code.
+
+Feel free to use GenAI coding assistants to create and improve your architecture and jobs. We are looking forward to an open discussion what tooling you used, and how it improved your efficiency.
+
+Here are some some things that will impress us during the interview:
+
+* A well structured and understandable presentation of your approach and system architecture
+* A demonstrable, working deployment of your solution to the dropzone challenge
+* A good understanding of the strengths and weaknesses of your solution
+* Thoughtful use of modern and clean development practices
+
+## Mandatory System Tasks
+
+### 01 | Data ingestion
+
+The ingested data takes the form of a JSON file containing a timestamped array of measuring points.  See [payload.json](payload.json) for an example dataset.
+
+The JSON data will be submitted as a POST request with a command equivalent to:
+
+```shell
+curl -X POST -d @payload.json http://service.com/endpoint
+```
+
+Assume that there may be up to 10 requests per second under maximum load.
+
+### 02 | Storing raw data
+
+The raw JSON data should be stored **immediately** using an appropriate storage option.
+
+### 03 | Data transformation
+
+Each json contains a `time_stamp` and `data` keys. 
+
+- Timestamps must contain timezone offsets (e.g. "-04:00" for US/Eastern)
+- Timestamps must be converted to UTC. 
+- Data points are aggregated calculating the mean and standard deviation.
+
+Please ensure that data quality checks are performed and handle failures appropriately.
+
+### 04 | Storing transformed data
+
+For each processed json the service should store the UTC timestamp, mean, standard deviation for further analytics in an appropriate storage options.
+
+The UTC timestamp is a primary key. If the same UTC timestamp is received twice, the existing data should be replaced by the mean and standard deviation of the newly ingested data.
+
+## Optional Features
+
+The following features are considered optional for the dropzone challenge. However, in a real life scenario these features are anything but optional. Please try to elaborate on them during your presentation if only in theory. Implementation of some or even all features is considered a big bonus.
+
+| API design | Scalability | Security | Lineage | Testing | CI/CD |
+|---|---|---|---|---|---|
+| Build the API to come complete with standardized documentation. Consider using OpenAPI. | Select technologies and/or services that scale well horizontally. Design software components in a scalable way. For example, you may consider decoupling ingestion from transformation. | APIs exposed to the internet should be secured enforcing authentication. Think about common ways to authenticate and secure communication. | Think about how you could track data lineage from ingestion to analysis, so you can investigate data quality issues at the source. | Well tested code is usually more stable, secure, and easier to maintain. Implement tests using a testing framework of your choice. Elaborate on the concept of test coverage or other metrics to validate the efficacy of your test suite. | Automated deployment makes day to day operations much easier and more reproducible. Implement common CI/CD tasks to deploy your system artefacts to the cloud. |
