@@ -8,10 +8,6 @@ from pydantic import BaseModel, Field
  - validate and parse the JSON body
  - generate OpenAPI (Swagger documentation)"""
 class IngestRequest(BaseModel):
-    # time_stamp must be:
-    # - required field
-    # - of type string
-    # - expected to follow ISO8601 format including timezone offset
     time_stamp: str = Field(
         ...,                  
         description="ISO8601 timestamp including timezone offset")
